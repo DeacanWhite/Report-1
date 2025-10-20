@@ -16,6 +16,8 @@ def test_mr1_permutation():
         (['test', 'python', 'code'], ['code', 'test', 'python']),
         (['apple', 'banana'], ['banana', 'apple']),
         (['one', 'two', 'three', 'four'], ['three', 'one', 'four', 'two']),
+        (['a', 'I', 'to'], ['to', 'I', 'a']),
+        (['apple', 'apple', 'banana'], ['banana', 'apple', 'apple'])
     ]
     
     print("\n=== MR1: Permutation Invariance Testing ===")
@@ -48,6 +50,8 @@ def test_mr2_unknown_addition():
         (['python', 'java'], ['python', 'java', 'qqqq']),
         (['apple'], ['apple', 'zzzzz']),
         (['the', 'quick', 'brown'], ['the', 'quick', 'brown', 'xjkdf']),
+        (['I', 'a', 'to'], ['I', 'a', 'to', 'xyz']),
+        (['hello', 'world'], ['hello', 'world', 'xyzabc', 'qwerty', 'asdfzxcv'])
     ]
     
     print("\n=== MR2: Unknown Word Addition Testing ===")
@@ -80,6 +84,8 @@ def test_mr3_case_invariance():
         (['Test', 'CODE'], ['test', 'code']),
         (['Apple', 'BANANA'], ['APPLE', 'banana']),
         (['The', 'QUICK', 'brown'], ['THE', 'quick', 'BROWN']),
+        (['A', 'I'], ['a', 'i']),
+        (['THE', 'and'], ['the', 'AND'])
     ]
     
     print("\n=== MR3: Case Invariance Testing ===")
@@ -114,8 +120,10 @@ def test_mr4_non_empty_property():
         ['hello', 'xyzabc'],
         ['xyzabc', 'world'],
         ['qqqq', 'test', 'zzzzz'],
-        ['python'],
+        ['python'], 
         ['asdfgh', 'the', 'jklqw'],
+        ['a', 'xyzabc'],
+        ['I', 'qqqq'],
     ]
     
     print("\n=== MR4: Non-Empty Property Testing ===")

@@ -146,9 +146,10 @@ mutations = [
         tmp = [w if self._case_sensitive else w.lower() for w in tmp_words]
         return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)}"""),
     
-    (26, "Use words directly", """        # MUTATION: Skip tmp_words creation
-        tmp = [w if self._case_sensitive else ensure_unicode(w).lower() for w in words]
-        return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)}"""),
+    (26, "Check dictionary membership with wrong condition", """        tmp_words = [ensure_unicode(w) for w in words]
+        tmp = [w if self._case_sensitive else w.lower() for w in tmp_words]
+        # MUTATION: Check if word length is in dictionary instead of word itself
+        return {w for w in tmp if len(w) in self._word_frequency.dictionary and self._check_if_should_check(w)}"""),
     
     (27, "Add empty string to result", """        tmp_words = [ensure_unicode(w) for w in words]
         tmp = [w if self._case_sensitive else w.lower() for w in tmp_words]

@@ -1,0 +1,29 @@
+MR,Group_ID,SI,SO,FI,FO,Relation
+MR1,MG1_1,"['cat', 'dog', 'bird']","['bird', 'cat', 'dog']","['dog', 'bird', 'cat']","['bird', 'cat', 'dog']",Permutation: SO == FO
+MR1,MG1_2,"['hello', 'world']","['hello', 'world']","['world', 'hello']","['hello', 'world']",Permutation: SO == FO
+MR1,MG1_3,"['test', 'python', 'code']","['code', 'python', 'test']","['code', 'test', 'python']","['code', 'python', 'test']",Permutation: SO == FO
+MR1,MG1_4,"['apple', 'banana']","['apple', 'banana']","['banana', 'apple']","['apple', 'banana']",Permutation: SO == FO
+MR1,MG1_5,"['one', 'two', 'three', 'four']","['four', 'one', 'three', 'two']","['three', 'one', 'four', 'two']","['four', 'one', 'three', 'two']",Permutation: SO == FO
+MR1,MG1_6,"['a', 'I', 'to']","['a', 'i', 'to']","['to', 'I', 'a']","['a', 'i', 'to']",Permutation: SO == FO
+MR1,MG1_7,"['apple', 'apple', 'banana']","['apple', 'banana']","['banana', 'apple', 'apple']","['apple', 'banana']",Permutation: SO == FO
+MR2,MG2_1,"['hello', 'world', 'test']","['hello', 'test', 'world']","['hello', 'world', 'test', 'asdfgh']","['hello', 'test', 'world']",Unknown Addition: SO == FO
+MR2,MG2_2,"['cat', 'dog']","['cat', 'dog']","['cat', 'dog', 'xyz123']","['cat', 'dog']",Unknown Addition: SO == FO
+MR2,MG2_3,"['python', 'java']","['java', 'python']","['python', 'java', 'qqqq']","['java', 'python']",Unknown Addition: SO == FO
+MR2,MG2_4,['apple'],['apple'],"['apple', 'zzzzz']",['apple'],Unknown Addition: SO == FO
+MR2,MG2_5,"['the', 'quick', 'brown']","['brown', 'quick', 'the']","['the', 'quick', 'brown', 'xjkdf']","['brown', 'quick', 'the']",Unknown Addition: SO == FO
+MR2,MG2_6,"['I', 'a', 'to']","['a', 'i', 'to']","['I', 'a', 'to', 'xyz']","['a', 'i', 'to']",Unknown Addition: SO == FO
+MR2,MG2_7,"['hello', 'world']","['hello', 'world']","['hello', 'world', 'xyzabc', 'qwerty', 'asdfzxcv']","['hello', 'world']",Unknown Addition: SO == FO
+MR3,MG3_1,"['Hello', 'World']","['hello', 'world']","['hello', 'world']","['hello', 'world']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_2,"['PYTHON', 'java']","['java', 'python']","['python', 'JAVA']","['java', 'python']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_3,"['Test', 'CODE']","['code', 'test']","['test', 'code']","['code', 'test']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_4,"['Apple', 'BANANA']","['apple', 'banana']","['APPLE', 'banana']","['apple', 'banana']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_5,"['The', 'QUICK', 'brown']","['brown', 'quick', 'the']","['THE', 'quick', 'BROWN']","['brown', 'quick', 'the']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_6,"['A', 'I']","['a', 'i']","['a', 'i']","['a', 'i']",Case Invariance: SO.lower() == FO.lower()
+MR3,MG3_7,"['THE', 'and']","['and', 'the']","['the', 'AND']","['and', 'the']",Case Invariance: SO.lower() == FO.lower()
+MR4,MG4_1,"['hello', 'xyzabc']",['hello'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_2,"['xyzabc', 'world']",['world'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_3,"['qqqq', 'test', 'zzzzz']",['test'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_4,['python'],['python'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_5,"['asdfgh', 'the', 'jklqw']",['the'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_6,"['a', 'xyzabc']",['a'],N/A,N/A,Non-Empty: len(SO) > 0
+MR4,MG4_7,"['I', 'qqqq']",['i'],N/A,N/A,Non-Empty: len(SO) > 0

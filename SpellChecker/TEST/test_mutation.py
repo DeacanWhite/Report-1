@@ -26,7 +26,7 @@ MR2_TEST_CASES = [
     (['apple'], ['apple', 'zzzzz']),
     (['the', 'quick', 'brown'], ['the', 'quick', 'brown', 'xjkdf']),
     (['I', 'a', 'to'], ['I', 'a', 'to', 'xyz']),
-    (['hello', 'world'], ['hello', 'world', 'applepie', 'bananas', 'cafe', 'cafe\u0301'])
+    (['hello', 'world'], ['hello', 'world', 'xyzabc', 'qwerty', 'asdfzxcv'])
 ]
 
 MR3_TEST_CASES = [

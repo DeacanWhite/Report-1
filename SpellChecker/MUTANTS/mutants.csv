@@ -1,0 +1,31 @@
+Mutant ID,Original Code,Mutation Operator,Modified Code
+mutant_01,w in self._word_frequency.dictionary and self._check_if_should_check(w),Logical Operator Replacement (LOR): AND → OR,w in self._word_frequency.dictionary or self._check_if_should_check(w)
+mutant_02,w if self._case_sensitive else w.lower(),Statement Deletion: Remove .lower() call,w if self._case_sensitive else w
+mutant_03,w in self._word_frequency.dictionary and self._check_if_should_check(w),Statement Deletion: Remove method call,w in self._word_frequency.dictionary
+mutant_04,w in self._word_frequency.dictionary,Relational Operator Replacement (ROR): in → not in,w not in self._word_frequency.dictionary
+mutant_05,w if self._case_sensitive else w.lower(),Logical Operator Insertion: Insert NOT,w if not self._case_sensitive else w.lower()
+mutant_06,tmp_words = [ensure_unicode(w) for w in words],Statement Deletion: Remove ensure_unicode() call,tmp_words = [w for w in words]
+mutant_07,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Statement Replacement: Replace return with empty set,return set()
+mutant_08,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Statement Replacement: Return all input without filtering,return set(tmp)
+mutant_09,w if self._case_sensitive else w.lower(),Conditional Branch Swap: Swap if/else branches,w.lower() if self._case_sensitive else w
+mutant_10,w in self._word_frequency.dictionary and self._check_if_should_check(w),Statement Deletion: Remove dictionary condition,self._check_if_should_check(w)
+mutant_11,tmp_words = [ensure_unicode(w) for w in words],Variable Replacement: Replace with empty list,tmp_words = []
+mutant_12,tmp = [w if self._case_sensitive else w.lower() for w in tmp_words],Variable Replacement: Replace with empty list,tmp = []
+mutant_13,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Logic Modification: Return only first match,return first valid word only
+mutant_14,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Logic Modification: Conditional return without filtering,return set(tmp) if check else set()
+mutant_15,w in self._word_frequency.dictionary and self._check_if_should_check(w),Logical Operator Replacement: Negate all conditions,w not in self._word_frequency.dictionary and not self._check_if_should_check(w)
+mutant_16,w.lower(),Method Replacement: lower() → upper(),w.upper()
+mutant_17,w in self._word_frequency.dictionary and self._check_if_should_check(w),Logical Operator Replacement: AND → OR with negations,w not in self._word_frequency.dictionary or not self._check_if_should_check(w)
+mutant_18,tmp_words = [ensure_unicode(w) for w in words],Array Modification: Skip first element,tmp_words = [ensure_unicode(w) for w in words][1:]
+mutant_19,tmp = [w if self._case_sensitive else w.lower() for w in tmp_words],Statement Replacement: Direct assignment,tmp = tmp_words
+mutant_20,w in self._word_frequency.dictionary and self._check_if_should_check(w),Condition Insertion: Add length validation,len(w) > 0 and w in self._word_frequency.dictionary and self._check_if_should_check(w)
+mutant_21,tmp_words = [ensure_unicode(w) for w in words],Array Modification: Process only first half,tmp_words = [ensure_unicode(w) for w in words][:len(tmp_words)//2]
+mutant_22,w if self._case_sensitive else w.lower(),Conditional Removal: Always apply .lower(),w.lower()
+mutant_23,return {w for w in tmp ...},Type Change: Set → List,return [w for w in tmp ...]
+mutant_24,w in self._word_frequency.dictionary and self._check_if_should_check(w),Condition Insertion: Add length > 2 requirement,w in self._word_frequency.dictionary and self._check_if_should_check(w) and len(w) > 2
+mutant_25,tmp_words = [ensure_unicode(w) for w in words],Filter Addition: Add truthiness check,tmp_words = [ensure_unicode(w) for w in words if w]
+mutant_26,"w in self._word_frequency.dictionary","Logic Modification: Check len(w) instead of w","len(w) in self._word_frequency.dictionary"
+mutant_27,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Statement Insertion: Add empty string to result,result.add(''); return result
+mutant_28,w in self._word_frequency.dictionary and self._check_if_should_check(w),Condition Insertion: Add 'and False',w in self._word_frequency.dictionary and self._check_if_should_check(w) and False
+mutant_29,return {w for w in tmp if w in self._word_frequency.dictionary and self._check_if_should_check(w)},Logic Deletion: Remove filtering logic,return set(tmp)
+mutant_30,w in self._word_frequency.dictionary,Relational Operator Replacement: in → not in,w not in self._word_frequency.dictionary
