@@ -14,6 +14,7 @@ MR1_TEST_CASES = [
     (['test', 'python', 'code'], ['code', 'test', 'python']),
     (['apple', 'banana'], ['banana', 'apple']),
     (['one', 'two', 'three', 'four'], ['three', 'one', 'four', 'two']),
+    (['a', 'I', 'to'], ['to', 'I', 'a']),
 ]
 
 MR2_TEST_CASES = [
@@ -22,6 +23,7 @@ MR2_TEST_CASES = [
     (['python', 'java'], ['python', 'java', 'qqqq']),
     (['apple'], ['apple', 'zzzzz']),
     (['the', 'quick', 'brown'], ['the', 'quick', 'brown', 'xjkdf']),
+    (['I', 'a', 'to'], ['I', 'a', 'to', 'xyz']),
 ]
 
 MR3_TEST_CASES = [
@@ -30,14 +32,17 @@ MR3_TEST_CASES = [
     (['Test', 'CODE'], ['test', 'code']),
     (['Apple', 'BANANA'], ['APPLE', 'banana']),
     (['The', 'QUICK', 'brown'], ['THE', 'quick', 'BROWN']),
+    (['A', 'I'], ['a', 'i']),
 ]
 
 MR4_TEST_CASES = [
     ['hello', 'xyzabc'],
     ['xyzabc', 'world'],
     ['qqqq', 'test', 'zzzzz'],
-    ['python'],
+    ['python'], 
     ['asdfgh', 'the', 'jklqw'],
+    ['a', 'xyzabc'],
+    ['I', 'qqqq'],
 ]
 
 def test_mutant(mutant_num):
@@ -102,8 +107,8 @@ def test_mutant(mutant_num):
             try:
                 output = checker.known(words)
                 
-                # Output should be non-empty (at least one valid word exists)
-                if len(output) == 0:
+                # Output should be non-empty AND should not contain invalid content
+                if len(output) == 0 or '' in output:
                     killed = True
                     violations.append(f"MR4_MG{i}")
             except Exception as e:
